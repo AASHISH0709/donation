@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact us</title>
+    
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+</head>
+<body>
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>Contact Us</h2>
+                <form method="post" action="/contact_us">
+                {% csrf_token %}
+				<input type="text" class="field" name=name1 placeholder="Your Name">
+				<input type="text" class="field" name=email1 placeholder="Your Email">
+				<input type="text" class="field" name=phone1 placeholder="Phone">
+				<textarea placeholder="Message" name=msg1 class="field"></textarea>
+				<button class="btn" type="submit">Send</button>
+                </form>
+			</div>
+		</div>
+	</div>
+<footer>
+        <div class="footer-content">
+            <h3>The Spark Donation</h3>
+            <p>Think positive; do positive</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 The Spark Donation. designed by <span>Aashish Shahi</span></p>
+        </div>
+    </footer>
+</body>
+
+</html>
+{% endblock body %}
+

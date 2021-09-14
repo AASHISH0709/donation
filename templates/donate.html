@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="col-6 mx-auto mt-4">
+
+<div class="text-center mt-5 pt5">
+<img src="https://www.svgrepo.com/show/54587/donate.svg" class="img-fluid" style="height:200px">
+</div>
+
+
+<form method="post" >
+{% csrf_token %}
+  <div class="mb-3 ">
+    <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+    <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Enter Amount</label>
+    <input type="number" name="amount" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Enter Email</label>
+    <input type="email" name="email" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="d-grid gap-2">
+  <button class="btn btn-success btn-block" type="submit">Proceed</button>
+  </div>
+</form>
+</div>
+{%  if payment %}
+<div class="text-center mx-auto">
+<form action="/success" method="POST">
+        <!-- RAZORPAY INTEGRATION HERE -->
+      <script 
+          src="https://checkout.razorpay.com/v1/checkout.js" 
+          data-key="rzp_test_SGOEshaOuD7kNT"
+          data-amount="{{payment.amount}}"
+          data-currency="INR" 
+          data-order_id="{{payment.id}}" 
+          data-buttontext="Pay with Razorpay"
+          data-name="The Spark Donation" 
+          data-description="Donate for Good cause"
+          data-image="https://example.com/your_logo.jpg" 
+          data-prefill.name="PC" 
+          data-prefill.email=""
+          data-theme.color="#F37254"></script>
+  <input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+{% endif %}
+</div>
+<footer>
+        <div class="footer-content">
+            <h3>The Spark Donation</h3>
+            <p>Think positive; do positive</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 The Spark Donation. designed by <span>Aashish Shahi</span></p>
+        </div>
+    </footer>
+
+{% endblock body %}

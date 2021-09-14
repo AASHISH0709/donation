@@ -1,0 +1,16 @@
+from django.db import models
+
+# Create your models here.
+class Donation(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    amount=models.CharField(max_length=100)
+    payment_id=models.CharField(max_length=100)
+    paid=models.BooleanField(default=False)
+
+class User_contact(models.Model):
+    name1=models.CharField(max_length=100)
+    email1=models.CharField(max_length=100)
+    phone1=models.CharField(max_length=100)
+    msg1=models.TextField()
+    date =models.DateField()

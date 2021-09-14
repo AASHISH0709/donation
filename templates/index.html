@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<div class="container-fluid px-0 py-0">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'd2.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'd1.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'd3.png' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
+<div class="text-center mt-5 pt5">
+<img src="https://visionsvcb.org/wp-content/uploads/2018/05/our-mission.png" class="img-fluid" style="height:250px">
+</div>
+
+<h2 class="my-2 mx-2 mt-5 pt5 text-center">
+<b>Vision/Services for the Blind and Visually Impaired is a nonprofit rehabilitation and social service organization whose purpose is to develop and implement programs to:
+</b></h2>
+<h4 class="px-2 "><b>✓ </b>Assist people of all ages who are blind or visually impaired to lead independent and active lives in their homes and communities</h4>
+<h4 class="px-2"><b>✓ </b>Educate the public to understand the capabilities and needs of people who are blind or visually impaired so that they may be integrated into all aspects of community life.</h4>
+
+<h2 class="my-2 mx-2 text-center"><b>Visions fulfills its purpose by providing:</b></h2>
+
+<h4 class="px-2"><b>✓ </b>Individualized rehabilitation training at home or in the community</h4>
+<h4 class="px-2"><b>✓ </b>Social services</h4>
+<h4 class="px-2"><b>✓ </b>Employment training and job development<h4>
+<h4 class="px-2"><b>✓ </b>Group and community education and activities</h4>
+
+
+<h1 class="my 2 text-center"> <p style="color:red">Our Projects :-</p></h1>
+<div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="card shadow-sm">
+          <img src="{% static 'eye2.png' %}">
+            <div class="card-body">
+              <p class="card-text">Eye treatment as weel donation camps are running in several hospitals world wide. 40% of donations are used here.</p>
+              
+            </div>
+          </div>
+          <div class="card shadow-sm">
+          <img src="{% static 'edu.png' %}">
+            <div class="card-body">
+              <p class="card-text">This is our most innovative projects. This project mainly helps poor children's to get educated. 30% of donations are used here..</p>
+              
+            </div>
+          </div>
+          <div class="card shadow-sm">
+          <img src="{% static 'needy.png' %}">
+            <div class="card-body">
+              <p class="card-text">With help of this project we provide shelter to needy people. 30% of donations are used here..</p>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<footer>
+        <div class="footer-content">
+            <h3>The Spark Donation</h3>
+            <p>Think positive; do positive</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 The Spark Donation. designed by <span>Aashish Shahi</span></p>
+        </div>
+    </footer>
+{% endblock body %}
