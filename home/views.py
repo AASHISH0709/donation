@@ -19,8 +19,8 @@ def donate(request):
         name=request.POST.get("name")
         amount=int(request.POST.get("amount"))*100
         if(len(name)!=0 and amount<= 0 ):            
-            return render(request,"donate.html")
             messages.success(request, 'Please enter valid details')
+            return render(request,"donate.html")
             
         email=request.POST.get("email")
         request.session['amt']=amount
