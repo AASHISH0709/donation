@@ -18,7 +18,7 @@ def donate(request):
     if request.method=="POST":
         name=request.POST.get("name")
         amount=int(request.POST.get("amount"))*100
-        if(len(name)!=0 and amount> 0 ):            
+        if(len(name)!=0 and amount<= 0 ):            
             return render(request,"donate.html")
             messages.success(request, 'Please enter valid details')
             
