@@ -18,10 +18,12 @@ def donate(request):
     if request.method=="POST":
         name=request.POST.get("name")
         amount=int(request.POST.get("amount"))*100
-        if(not name.isalpha() and amount<= 0 ):            
-            messages.success(request, 'Please enter valid details')
+        if not name.isalpha():         
+            messages.success(request, 'Please enter valid Name')
             return render(request,"donate.html")
-            
+        if (amount<=0):            
+            messages.success(request, 'Please enter valid amount')
+            return render(request,"donate.html")            
         email=request.POST.get("email")
         request.session['amt']=amount
         client=razorpay.Client(auth=("rzp_test_SGOEshaOuD7kNT","2Vc5G9ziCXPIzgZr1RMglLkq"))
