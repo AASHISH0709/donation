@@ -30,20 +30,59 @@
 <div class="text-center mx-auto">
 <form action="/success" method="POST">
         <!-- RAZORPAY INTEGRATION HERE -->
-      <script 
-          src="https://checkout.razorpay.com/v1/checkout.js" 
-          data-key="rzp_test_SGOEshaOuD7kNT"
-          data-amount="{{payment.amount}}"
-          data-currency="INR" 
-          data-order_id="{{payment.id}}" 
-          data-buttontext="Pay with Razorpay"
-          data-name="The Spark Donation" 
-          data-description="Donate for Good cause"
-          data-image="https://example.com/your_logo.jpg" 
-          data-prefill.name="PC" 
-          data-prefill.email=""
-          data-theme.color="#F37254"></script>
-  <input type="hidden" custom="Hidden Element" name="hidden">
+  curl -u [rzp_test_SGOEshaOuD7kNT]:[2Vc5G9ziCXPIzgZr1RMglLkq] \
+-X POST https://api.razorpay.com/v1/payment_links/ \
+-H 'Content-type: application/json' \
+-d '{
+  "amount": "{{payment.amount}}",
+  "currency": "INR",
+  "accept_partial": False,
+  "first_min_partial_amount": 100,
+  "description": "Donate For Good Cause",
+  "customer": {
+    "name": "{{payment.name}}",
+    "contact": "",
+    "email": "{{payment.amount}}"
+  },
+  "notify": {
+    "sms": true,
+    "email": true
+  },
+  "reminder_enable": true,
+  "options": {
+    "checkout": {
+      "config": {
+        "display": {
+          "blocks": {
+            "banks": {
+              "name": "All Payment Methods",
+              "instruments": [
+                {
+                  "method": "upi"
+                },
+                {
+                  "method": "netbanking"
+                },
+                {
+                  "method": "card"
+                },
+                {
+                  "method": "wallet"
+                }
+              ]
+            }
+          },
+          "sequence": [
+            "block.banks"
+          ],
+          "preferences": {
+            "show_default_blocks": false
+          }
+        }
+      }
+    }
+  }
+}'
 </form>
 {% endif %}
 </div>
