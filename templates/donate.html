@@ -30,7 +30,8 @@
 <div class="text-center mx-auto">
 <form action="/success" method="POST">
         <!-- RAZORPAY INTEGRATION HERE -->
-  curl -u [rzp_test_SGOEshaOuD7kNT]:[2Vc5G9ziCXPIzgZr1RMglLkq] \
+        <script 
+                  curl -u [rzp_test_SGOEshaOuD7kNT]:[2Vc5G9ziCXPIzgZr1RMglLkq] \
 -X POST https://api.razorpay.com/v1/payment_links/ \
 -H 'Content-type: application/json' \
 -d '{
@@ -83,6 +84,9 @@
     }
   }
 }'
+
+</script>
+  <input type="hidden" custom="Hidden Element" name="hidden">
 </form>
 {% endif %}
 </div>
